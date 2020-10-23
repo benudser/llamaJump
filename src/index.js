@@ -11,7 +11,7 @@ const GAME_WIDTH = 1000;
 const GAME_HEIGHT = 800;
 
 export let character = new Character(GAME_HEIGHT, GAME_WIDTH);
-let input = new InputHandler();
+export let input = new InputHandler(character);
 
 window.requestAnimationFrame(gameLoop);
 
@@ -36,8 +36,4 @@ function gameLoop(llama) {
     window.requestAnimationFrame(gameLoop);
     
 }
-
-
-
-
 
