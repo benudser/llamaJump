@@ -8,13 +8,13 @@ export default class InputHandler {
     constructor(character) {
         document.addEventListener('keydown', event=> {
             switch(event.key){
-                case 'ArrowLeft':
+                case 'a':
                     this.moveLeft = true;
                     break;
-                case 'ArrowRight':
+                case 'd':
                     this.moveRight = true;
                     break;
-                case 'ArrowUp':
+                case 'w':
                     if(character.jumping == false){
                         character.jump();
                     }
@@ -28,11 +28,11 @@ export default class InputHandler {
 
         document.addEventListener('keyup', event=> {
             switch(event.key){
-                case 'ArrowLeft':
+                case 'a':
                     this.moveLeft = false;
                     break;
 
-                case 'ArrowRight':
+                case 'd':
                     this.moveRight = false;
                     break;
             }

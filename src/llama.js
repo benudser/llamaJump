@@ -3,6 +3,9 @@ import {input} from '/src/index.js';
 export default class Character {
 
     constructor(gameHeight, gameWidth) {
+
+        this.image = document.getElementById("llama_img");
+
         this.width =  40;
         this.height = 40;
 
@@ -22,11 +25,11 @@ export default class Character {
 
 
     moveLeft(){
-        this.velocity.x -= 2;
+        this.velocity.x -= 1;
     }
 
     moveRight(){
-        this.velocity.x += 2;
+        this.velocity.x += 1;
     }
 
     jump(){
@@ -41,12 +44,14 @@ export default class Character {
 
     draw(context) {
         context.fillStyle = 'red';
-        context.fillRect( 
-            this.position.x,
-            this.position.y,
-            this.width,
-            this.height 
-            );
+        // context.fillRect( 
+        //     this.position.x,
+        //     this.position.y,
+        //     this.width,
+        //     this.height 
+        //     );
+
+        context.drawImage(this.image, this.position.x, this.position.y-60, 70, 100);
     }
 
     update(context) {
@@ -60,7 +65,7 @@ export default class Character {
         
 
         // gravity
-        this.velocity.y += 1.5;
+        this.velocity.y += 2;
         console.log("movement", input.getMovement, this.velocity.x);
        
         
@@ -97,14 +102,14 @@ export default class Character {
         }
      
     
-        context.fillRect(
-            this.position.x,
-            this.position.y,
-            this.width,
-            this.height 
-            );
+        // context.fillRect(
+        //     this.position.x,
+        //     this.position.y,
+        //     this.width,
+        //     this.height 
+        //     );
 
-           
+        context.drawImage(this.image, this.position.x, this.position.y-60, 70, 100);
 
         
         
