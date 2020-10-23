@@ -4,26 +4,33 @@ export default class InputHandler {
 
     constructor() {
         document.addEventListener('keydown', event=> {
-            switch(event.code){
-                case 'KeyW':
-                    character.jump();
-                    break;
-
-                case 'KeyS':
-                    character.duck();
-                    break;
-
-                case 'KeyA':
+            switch(event.key){
+                case 'a':
                     character.moveLeft();
                     break;
 
-                case 'KeyD':
+                case 'd':
                     character.moveRight();
+                    break;
+
+                case 'w':
+                    if(character.jumping == false){
+                        character.jump();
+                    }
+                        
+                        
                     break;
 
         
             }
         });
+
+          
+
+        
     }
+
+
+
 
 }
